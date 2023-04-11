@@ -8,7 +8,9 @@
     <body>
         <h1>QR Test</h1>
         <p>Write a code for your QR</p>
-        <input type="text">
-        <button type="button" onclick="alert('Hello world!')">Create QR</button>
+        <form method="POST" action="{{ url_for('generate_qrcode') }}">
+            <input type="text" name="code">
+            <button type="submit">Create QR</button>
+        </form>
     </body>
 </html>
