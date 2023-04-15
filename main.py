@@ -21,6 +21,7 @@ def generate_qrcode():
     img.save(img_io, 'PNG')
     img_io.seek(0)
     img_base64 = base64.b64encode(img_io.getvalue()).decode('utf-8')
+    #TEST Message
     return render_template('qrcode_display.html', img_base64=img_base64, code=code)
 
 
