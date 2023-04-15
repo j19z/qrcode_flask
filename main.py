@@ -20,11 +20,8 @@ def generate_qrcode():
     img_io = BytesIO()
     img.save(img_io, 'PNG')
     img_io.seek(0)
-    #response = make_response(img_io.getvalue())
     img_base64 = base64.b64encode(img_io.getvalue()).decode('utf-8')
-    #img_base64.headers['Content-Type'] = 'image/png'
     return render_template('qrcode_display.html', img_base64=img_base64, code=code)
-    #return response
 
 
 if __name__ == '__main__':
